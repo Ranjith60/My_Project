@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 public class Httpurlconnectionexample{
@@ -117,12 +119,12 @@ public class Httpurlconnectionexample{
 		connection.setRequestMethod("PUT");
 
 
-		connection.setRequestProperty("content-type", "application/json");
+		connection.setRequestProperty("content-Type","application/json");
 		connection.setDoOutput(true);
 
-		String   jsonbody="{\"name\": \"Agni2323\", \"salary\": \"100000000\", \"age\": \"1\"}";
+		String jsonbody="{\"name\": \"Agni2323\", \"salary\": \"100000000\", \"age\": \"1\"}";
 
-		byte[]inputjson=  jsonbody.getBytes();
+		byte[]inputjson= jsonbody.getBytes();
 
 
 		OutputStream outstream= connection.getOutputStream();
@@ -149,7 +151,44 @@ public class Httpurlconnectionexample{
 
 
 	}
+	
+	
+	// delete
 
+public void deleterequestExample() throws IOException {
+	
+	URL url=new URL("http://dummy.restapiexample.com/api/v1/delete/26081");
+	HttpURLConnection connection=(HttpURLConnection)url.openConnection();
+	connection.setRequestMethod("DELETE");
+
+
+	connection.setRequestProperty("Content-Type", "application/json");
+	connection.setDoOutput(true);
+
+	
+
+	System.out.println("response code :" + connection.getResponseCode());
+	System.out.println("response message : " + connection.getResponseMessage());
+
+	InputStream instInputStream=connection.getInputStream();
+	InputStreamReader inputStreamReader=new InputStreamReader(instInputStream);
+
+	BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
+
+	String line;
+	StringBuffer buffer=new StringBuffer();
+	while((line=bufferedReader.readLine())!= null)
+	{
+
+		buffer.append(line) ;
+
+	}
+	System.out.println(buffer);	
+
+}
+
+	
+	
 
 
 
@@ -157,10 +196,10 @@ public class Httpurlconnectionexample{
 	public static void main (String[]args)throws IOException
 	{
 		Httpurlconnectionexample connectionexample=new Httpurlconnectionexample();
-			connectionexample.getmenthod();
-		connectionexample.postmethodExample();
-			connectionexample.PutRequestExample();
-
+	//		connectionexample.getmenthod();
+	//	connectionexample.postmethodExample();
+//			connectionexample.PutRequestExample();
+            connectionexample.deleterequestExample();
 	}
 }
 
