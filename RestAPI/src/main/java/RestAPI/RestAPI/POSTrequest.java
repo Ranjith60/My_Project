@@ -13,15 +13,15 @@ import java.net.URLConnection;
 public class POSTrequest {
 
 
-	public void POSTREQUEST() throws IOException {
+	public void postmethodExample() throws IOException {
 
-		URL url=new URL("https://reqres.in/api/users/2");
+		URL url=new URL("https://dummy.restapiexample.com/api/v1/create");
 		HttpURLConnection connection=(HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("POST");
 
 
 		connection.setRequestProperty("content-type", "application/json");
-		connection.setDoInput(true);
+		connection.setDoOutput(true);
 
 		String   jsonbody="{\"name\": \"Agniprasath123\", \"salary\": \"100000000\", \"age\": \"1\"}";
 
@@ -54,8 +54,8 @@ public class POSTrequest {
 	}
 
           public static void main(String[]args) throws IOException {
-        	  Httpurlconnection connection=new Httpurlconnection();  
-        	  connection.POSTREQUEST();
+        	  Httpurlconnectionexample connection=new Httpurlconnectionexample();  
+        	  connection.postmethodExample();
           }
           
 	

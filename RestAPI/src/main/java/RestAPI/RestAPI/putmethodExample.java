@@ -8,18 +8,18 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PUTrequest {
+public class putmethodExample {
 	
 	
-	public void PUTrequest() throws IOException {
+	public void putRequestExample() throws IOException {
 
-		URL url=new URL("https://dummy.restapiexample.com/api/v1/update/26081");
+		URL url=new URL("https://dummy.restapiexample.com/api/v1/update/8756");
 		HttpURLConnection connection=(HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("PUT");
 
 
-		connection.setRequestProperty("content-type", "application/json");
-		connection.setDoInput(true);
+		connection.setRequestProperty("content-Type", "application/json");
+		connection.setDoOutput(true);
 
 		String   jsonbody="{\"name\": \"Agni3\", \"salary\": \"100000000\", \"age\": \"1\"}";
 
@@ -52,8 +52,8 @@ public class PUTrequest {
 	}
 
 	 public static void main(String[]args) throws IOException {
-   	  Httpurlconnection connection=new Httpurlconnection();  
-   	  connection.PUTrequest();
+		 Httpurlconnectionexample connections=new Httpurlconnectionexample();   	     
+		 connections.PutRequestExample();
    
 	}
 
