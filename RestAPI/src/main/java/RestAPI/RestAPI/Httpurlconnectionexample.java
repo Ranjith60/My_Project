@@ -196,8 +196,8 @@ public void deleterequestExample() throws IOException {
 	public static void main (String[]args)throws IOException
 	{
 		Httpurlconnectionexample connectionexample=new Httpurlconnectionexample();
-	//		connectionexample.getmenthod();
-	//	connectionexample.postmethodExample();
+			connectionexample.getmenthod();
+		connectionexample.postmethodExample();
 //			connectionexample.PutRequestExample();
             connectionexample.deleterequestExample();
 	}
